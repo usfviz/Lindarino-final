@@ -298,6 +298,8 @@ server <- function(input, output, session) {
   })
   
   output$choropleth <- renderLeaflet({
+    # Code for this choropleth plot was produced following the tutorial at
+    # https://rstudio.github.io/leaflet/choropleths.html
     injury_name <- injury_name_func2(input$injury_type_choropleth)
     aviation_single_year <- aviation_long %>% filter(year == input$year_slider)
     colnames(aviation_single_year) <- c('State_abbr', colnames(aviation_single_year)[2:12])
